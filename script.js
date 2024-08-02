@@ -42,9 +42,7 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-let x = getComputerChoice();
 
-console.log(x);
 
 //DECISIÓN HUMANO
 
@@ -62,8 +60,7 @@ function getHumanChoice(){
     }
 }
 
-let y = getHumanChoice();
-console.log(y);
+
 
 //LÓGICA PARA UNA RONDA
 
@@ -111,5 +108,7 @@ function playRound(humanChoiceParam, computerChoiceParam){
     }
 }
 
-playRound(y,x);
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+playRound(humanSelection,computerSelection);
 
