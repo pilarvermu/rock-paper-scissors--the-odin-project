@@ -6,6 +6,12 @@
 //Se comprueban ambas decisiones y se decide el resultado
 //de la partida según la lógica usual del juego
 
+
+//VARIABLES PARA PUNTAJE
+let humanScore = 0;
+let computerScore = 0;
+
+
 //DECISIÓN DEL ORDENADOR
 //0 == PIEDRA
 //1 == PAPEL
@@ -48,3 +54,4 @@ function getHumanChoice(){
 
 let y = getHumanChoice();
 console.log(y);
+
