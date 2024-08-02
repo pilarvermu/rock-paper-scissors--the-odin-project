@@ -7,6 +7,7 @@
 //de la partida según la lógica usual del juego
 
 
+
 //VARIABLES PARA PUNTAJE
 let humanScore = 0;
 let computerScore = 0;
@@ -29,13 +30,13 @@ function getComputerChoice(){
     let computerChoice = "";
     switch(getRandomInt(3)){
         case 0:
-            computerChoice = "ROCK";
+            computerChoice = "rock";
             break;
         case 1:
-            computerChoice = "PAPER";
+            computerChoice = "paper";
             break;
         case 2:
-            computerChoice = "SCISSORS";
+            computerChoice = "scissors";
             break;
     }
     return computerChoice;
@@ -47,11 +48,26 @@ console.log(x);
 
 //DECISIÓN HUMANO
 
+const opcionesValidas = ["rock", "paper", "scissors"];
+
 function getHumanChoice(){
-    let humanChoice = prompt ("ROCK, PAPER OR SCISSORS?");
-    return humanChoice;
+    let humanChoice = prompt ("rock, paper or scissors?");
+    humanChoice = humanChoice.trim().toLowerCase();
+
+    if(opcionesValidas.includes(humanChoice)){
+        return humanChoice
+    }else{
+        alert("UNVALID CHOICE");
+        return getHumanChoice();
+    }
 }
 
 let y = getHumanChoice();
 console.log(y);
+
+//LÓGICA PARA UNA RONDA
+
+function playRound(humanChoiceParam, computerChoiceParam){
+
+}
 
