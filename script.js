@@ -20,23 +20,31 @@ function getRandomInt(max){
 }
 
 function getComputerChoice(){
-    let choice = "";
+    let computerChoice = "";
     switch(getRandomInt(3)){
         case 0:
-            choice = "ROCK";
+            computerChoice = "ROCK";
             break;
         case 1:
-            choice = "PAPER";
+            computerChoice = "PAPER";
             break;
         case 2:
-            choice = "SCISSORS";
+            computerChoice = "SCISSORS";
             break;
     }
-    return choice;
+    return computerChoice;
 }
 
 let x = getComputerChoice();
 
 console.log(x);
 
-//
+//DECISIÓN HUMANO
+
+function getHumanChoice(){
+    let humanChoice = prompt ("ROCK, PAPER OR SCISSORS?");
+    return humanChoice;
+}
+
+let y = getHumanChoice();
+console.log(y);
