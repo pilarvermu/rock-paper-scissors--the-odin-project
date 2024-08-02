@@ -13,10 +13,30 @@
 //SE PODRIA HACER UN PARSE UTILIZANDO ENUMERADOS
 //AUN NO SE HAN VISTO EN EL CURRICULO DE The Odin Project
 
+
+//Obtiene un numero entre 0 y max
 function getRandomInt(max){
     return Math.floor(Math.random()*max);
 }
 
 function getComputerChoice(){
-    return getRandomInt();
+    let choice = "";
+    switch(getRandomInt(3)){
+        case 0:
+            choice = "ROCK";
+            break;
+        case 1:
+            choice = "PAPER";
+            break;
+        case 2:
+            choice = "SCISSORS";
+            break;
+    }
+    return choice;
 }
+
+let x = getComputerChoice();
+
+console.log(x);
+
+//
