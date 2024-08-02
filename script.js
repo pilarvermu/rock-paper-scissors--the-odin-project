@@ -109,10 +109,20 @@ function playRound(humanChoiceParam, computerChoiceParam, humanScoreParam, compu
 function playGame(){
     let humanScore = 0;
     let computerScore = 0;
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
+    
     for(i = 0; i < 5; i++){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
         playRound(humanSelection,computerSelection,humanScore,computerScore);
+    }
+    if(humanScore > computerScore){
+        console.log("You won");
+    }else if(humanScore == computerScore){
+        console.log("Tie!");
+    }else{
+        console.log("You lost");
     }
     
 }
+
+playGame();
