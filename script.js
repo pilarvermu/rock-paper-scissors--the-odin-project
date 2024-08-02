@@ -8,11 +8,6 @@
 
 
 
-//VARIABLES PARA PUNTAJE
-let humanScore = 0;
-let computerScore = 0;
-
-
 //DECISIÓN DEL ORDENADOR
 //0 == PIEDRA
 //1 == PAPEL
@@ -64,7 +59,7 @@ function getHumanChoice(){
 
 //LÓGICA PARA UNA RONDA
 
-function gameFinish(victoryBoolean, human, computer){
+function gameFinish(victoryBoolean, human, computer,humanScore,computerScore){
     switch(victoryBoolean){
         case "tie":
             console.log("That's a tie, you both chose "+ human);
@@ -80,35 +75,44 @@ function gameFinish(victoryBoolean, human, computer){
     }
 }
 
-function playRound(humanChoiceParam, computerChoiceParam){
+function playRound(humanChoiceParam, computerChoiceParam, humanScoreParam, computerScoreParam){
     //CASO DE EMPATE
     if(humanChoiceParam == computerChoiceParam){
-        gameFinish("tie",humanChoiceParam,computerChoiceParam);
+        gameFinish("tie",humanChoiceParam,computerChoiceParam, humanScoreParam, computerScoreParam);
     }
 
 
     if(humanChoiceParam == "rock"){
         if(computerChoiceParam == "paper"){
-            gameFinish("lose",humanChoiceParam,computerChoiceParam);
+            gameFinish("lose",humanChoiceParam,computerChoiceParam, humanScoreParam, computerScoreParam);
         }else if(computerChoiceParam == "scissors"){
-            gameFinish("win",humanChoiceParam,computerChoiceParam);
+            gameFinish("win",humanChoiceParam,computerChoiceParam, humanScoreParam, computerScoreParam);
         }
     }else if(humanChoiceParam == "paper"){
         if(computerChoiceParam == "rock"){
-            gameFinish("win",humanChoiceParam,computerChoiceParam);
+            gameFinish("win",humanChoiceParam,computerChoiceParam, humanScoreParam, computerScoreParam);
         }else if(computerChoiceParam == "scissors"){
-            gameFinish("lose",humanChoiceParam,computerChoiceParam);
+            gameFinish("lose",humanChoiceParam,computerChoiceParam, humanScoreParam, computerScoreParam);
         }
     }else if(humanChoiceParam == "scissors"){
         if(computerChoiceParam == "rock"){
-            gameFinish("lose",humanChoiceParam,computerChoiceParam);
+            gameFinish("lose",humanChoiceParam,computerChoiceParam, humanScoreParam, computerScoreParam);
         }else if(computerChoiceParam == "paper"){
-            gameFinish("win",humanChoiceParam,computerChoiceParam);
+            gameFinish("win",humanChoiceParam,computerChoiceParam, humanScoreParam, computerScoreParam);
         }
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-playRound(humanSelection,computerSelection);
 
+
+//LOGICA JUEGO DE 5 RONDAS
+function playGame(){
+    let humanScore = 0;
+    let computerScore = 0;
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    for(i = 0; i < 5; i++){
+        playRound(humanSelection,computerSelection,humanScore,computerScore);
+    }
+    
+}
