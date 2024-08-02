@@ -67,7 +67,49 @@ console.log(y);
 
 //LÓGICA PARA UNA RONDA
 
-function playRound(humanChoiceParam, computerChoiceParam){
-
+function gameFinish(victoryBoolean, human, computer){
+    switch(victoryBoolean){
+        case "tie":
+            console.log("That's a tie, you both chose "+ human);
+            break;
+        case "win":
+            console.log("You won, " + human + " beats " + computer);
+            humanScore++;
+            break;
+        case "lose":
+            console.log("You lost, " + computer + " beats " + human);
+            computerScore++;
+            break;
+    }
 }
+
+function playRound(humanChoiceParam, computerChoiceParam){
+    //CASO DE EMPATE
+    if(humanChoiceParam == computerChoiceParam){
+        gameFinish("tie",humanChoiceParam,computerChoiceParam);
+    }
+
+
+    if(humanChoiceParam == "rock"){
+        if(computerChoiceParam == "paper"){
+            gameFinish("lose",humanChoiceParam,computerChoiceParam);
+        }else if(computerChoiceParam == "scissors"){
+            gameFinish("win",humanChoiceParam,computerChoiceParam);
+        }
+    }else if(humanChoiceParam == "paper"){
+        if(computerChoiceParam == "rock"){
+            gameFinish("win",humanChoiceParam,computerChoiceParam);
+        }else if(computerChoiceParam == "scissors"){
+            gameFinish("lose",humanChoiceParam,computerChoiceParam);
+        }
+    }else if(humanChoiceParam == "scissors"){
+        if(computerChoiceParam == "rock"){
+            gameFinish("lose",humanChoiceParam,computerChoiceParam);
+        }else if(computerChoiceParam == "paper"){
+            gameFinish("win",humanChoiceParam,computerChoiceParam);
+        }
+    }
+}
+
+playRound(y,x);
 
