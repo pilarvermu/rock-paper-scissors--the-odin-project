@@ -175,6 +175,10 @@ buttons.forEach(button =>{
 })
 
 function checkGame(){
+
+    humanScoreDOM.innerText = "Human Score: "+humanScore;
+    computerScoreDOM.innerText = "Computer Score: "+computerScore;
+
     if(roundsPlayed == 5){
         if(humanScore > computerScore){
             console.log("You won");
@@ -185,7 +189,13 @@ function checkGame(){
         }
         humanScore = 0;
         computerScore = 0;
+        roundsPlayed = 0;
     }
 
-    
+
+
 }
+
+//DOM PARA HUMAN Y COMPUTER SCORE
+const humanScoreDOM = document.querySelector("#humanScore");
+const computerScoreDOM = document.querySelector('#computerScore')
