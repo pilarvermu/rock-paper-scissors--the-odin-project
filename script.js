@@ -106,6 +106,7 @@ function playRound(humanChoiceParam, computerChoiceParam, humanScoreParam, compu
 
 
 //LOGICA JUEGO DE 5 RONDAS
+/*
 function playGame(){
     let humanScore = 0;
     let computerScore = 0;
@@ -124,5 +125,6 @@ function playGame(){
     }
     
 }
+*/
 
 playGame();
