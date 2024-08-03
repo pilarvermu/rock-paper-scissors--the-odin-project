@@ -1,7 +1,16 @@
+.buttons-and-score-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25%;
+}
+
 .buttons-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 45%;
+    padding: 0%;
     gap: 20px;
 }
+
